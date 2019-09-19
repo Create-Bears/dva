@@ -1,0 +1,193 @@
+:global {
+  @media screen and (max-width:1920px) and (min-width: 375px) {
+    %juzhong {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      width: 100%;
+      background-color: rgb(63, 81, 181);
+      height: 100px;
+      div {
+        @extend %juzhong;
+        font-family: SourceHanSansSC;
+        font-weight: 400;
+        font-size: 28px;
+        color: rgb(255, 255, 255);
+        line-height: 100px;
+      }
+    }
+    .main {
+      flex: 1;
+      height: 824px;
+      .content {
+        width: 100%;
+        height: 100%;
+        .fromContent {
+          width: 400px;
+          height: 400px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -200px;
+          margin-top: -200px;
+        }
+      }
+    }
+    .from-text{
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      .check{
+        display: flex;
+        justify-content: flex-start;
+        input{
+          margin-right: 5px;
+        }
+      }
+      div{
+        flex: 1;
+        height: 40px;
+        margin-top: 20px;
+        @extend %juzhong;
+        button{
+           width: 100%;
+           border:none;
+           outline: 0;
+           height: 100%;
+           background-color: rgb(63, 81, 181); 
+           border-radius: 5px;
+           color:#fff;
+        } 
+        .inp{
+          width: 100%;
+          height: 40px;
+        }
+      }
+      .tab-list{
+        span{
+          display: inline-block;
+          color:#95A0A7;
+          font-weight: 400;
+          border-bottom: 2px solid #95A0A7;
+          padding:10px 15px;
+        }
+        .tab-list-active{
+          display: inline-block;
+          color:#5A93D6;
+          font-weight: 400;
+          border-bottom: 2px solid #5A93D6;
+          padding:10px 15px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 375px) {
+    body,
+    html,
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+    html {
+      font-size: calc(100 / 375 * 100vw);
+    }
+    %ydjuzhong {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 15px;
+    }
+    .header {
+      width: 100%;
+      background-color: rgb(63, 81, 181);
+      height: 0.5rem;
+      div {
+        @extend %ydjuzhong;
+        font-family: SourceHanSansSC;
+        font-weight: 400;
+        font-size: 0.18rem;
+        color: rgb(255, 255, 255);
+        line-height: 0.5rem;
+      }
+    }
+    .main {
+      flex: 1;
+      overflow: auto;
+      .content {
+        width: 100%;
+        height: 100%;
+        .fromContent {
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          top:50%;
+          left: 50%;
+          margin-left: -1.5rem;
+          margin-top: -1.5rem;
+        }
+      }
+    }
+    .from-text{
+      padding: 0.2rem;
+      display: flex;
+      flex-direction: column;
+      .check{
+        display: flex;
+        justify-content: flex-start;
+        input{
+          margin-right: 0.05rem;
+        }
+      }
+      div{
+        flex: 1;
+        height:0.4rem;
+        margin-top:0.1rem;
+        @extend %ydjuzhong;
+        button{
+           width: 100%;
+           border:none;
+           outline: 0;
+           height: 100%;
+           background-color: rgb(63, 81, 181); 
+           border-radius:0.05rem;
+           color:#fff;
+        } 
+        .inp{
+          width: 100%;
+          height: 0.4rem;
+        }
+      }
+      .tab-list{
+        span{
+          display: inline-block;
+          color:#95A0A7;
+          font-weight: 400;
+          border-bottom: 2px solid #95A0A7;
+          padding:0.1rem 0.15rem;
+        }
+        .tab-list-active{
+          display: inline-block;
+          color:#5A93D6;
+          font-weight: 400;
+          border-bottom: 2px solid #5A93D6;
+          padding:0.1rem 0.15rem;
+        }
+      }
+    }
+  }
+}
