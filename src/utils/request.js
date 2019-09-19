@@ -1,30 +1,42 @@
-import fetch from 'dva/fetch';
+import axios from 'axios'
+import { message } from 'antd'
 
-function parseJSON(response) {
-  return response.json();
-}
+const instance = axios.create({
+  baseURL: 'http://148.70.121.59:9001',
+  timeout: 1000
+})
 
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
+// Add a request interceptor
+instance.interceptors.request.use(
+  config => {
+    // Do something before request is sent
+    return config
+  },
+  error => {
+    // Do something with request error
+    return Promise.reject(error)
   }
+)
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
-}
+// Add a response interceptor
+instance.interceptors.response.use(
+  response => {
+    // Do something with response data
+    // if (response.status !== 200){
+    //     message.error(response.statusText);
+    //   }
+    return response.data
+  },
+  error => {
+    // console.log('error...', error.response)
+    if (error.response.status && error.response.status !== 200) {
+      message.error(error.response.statusText)
+    } else {
+      // message.error(error.response);
+    }
+    // Do something with response error
+    return Promise.reject(error)
+  }
+)
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
-}
+export default instance
