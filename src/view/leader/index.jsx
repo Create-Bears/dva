@@ -1,49 +1,9 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import '../visualDisplay/index.css'
-import { Switch, message } from 'antd'
+import { Switch } from 'antd'
 import Eachart from '../../components/Echart'
-import { addStudent } from '../../services/visual'
 
 const Leader = props => {
-  //定义state
-  const [name, setName] = useState('')
-  const [count, setCount] = useState('')
-  const [help, setHelp] = useState('')
-
-  //获取班级列表的方法
-  //   const getClassList = async () => {
-  //     let result = await visualClass()
-  //     console.log(result.data)
-  //   }
-  //   console.log(getClassList())
-  //name
-  const handleName = e => {
-    setName(e.target.value)
-  }
-  //count
-  const handleCount = e => {
-    setCount(e.target.value)
-  }
-  //help
-  const handleHelp = e => {
-    setHelp(e.target.value)
-  }
-
-  //添加学生事件
-  const addStudentList = async () => {
-    let result = await addStudent({
-      cid: count,
-      stu_name: name,
-      repetitions: help
-    })
-    console.log(result.data)
-    if (result.data.code === 1) {
-      message.success('添加成功')
-    } else {
-      message.error('添加失败')
-    }
-  }
-
   return (
     <div className="container">
       <header className="widget header">
@@ -53,9 +13,9 @@ const Leader = props => {
       </header>
       <main className="main">
         <div className="kindClass">
-          <div>切换班级：</div>
+          <div>选择班级：</div>
           <div>
-            <button>创建班级+</button>
+            <button>1703E</button>
           </div>
           <label className="open">
             <Switch></Switch>
@@ -63,23 +23,9 @@ const Leader = props => {
           </label>
         </div>
         <div className="addStudent">
-          <div>添加学生+:</div>
-          <div>
-            <input type="text" placeholder="输入姓名" onChange={handleName} />
-          </div>
-          <div>
-            <input type="text" placeholder="末位次数" onChange={handleCount} />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="结对子，帮扶对象"
-              onChange={handleHelp}
-            />
-          </div>
-          <div>
-            <button onClick={addStudentList}>添加</button>
-          </div>
+          <div>名单:</div>
+          <div>张三</div>
+          <div>李四</div>
         </div>
         <div className="tablelist">
           <Eachart></Eachart>

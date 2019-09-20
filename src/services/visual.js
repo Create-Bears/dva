@@ -14,3 +14,8 @@ export const addStudent = params => {
   let url = '/emstu/student/add'
   return request.put(url, params)
 }
+
+export const addExam = params => {
+  let url = '/emstu/student/addrecord'
+  return request.put(url, params)
+}

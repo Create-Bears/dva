@@ -1,7 +1,10 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import { Switch, message } from 'antd'
 import Eachart from '../../components/Echart'
+import Mask from '../../components/Mask'
+import Masks from '../../components/Masks'
+import { connect } from 'dva'
 import { addStudent } from '../../services/visual'
 
 const VisualDisplay = props => {
@@ -9,7 +12,8 @@ const VisualDisplay = props => {
   const [name, setName] = useState('')
   const [count, setCount] = useState('')
   const [help, setHelp] = useState('')
-
+  const [flag, setFlag] = useState(false)
+  const [vlag, setvlag] = useState(false)
   //获取班级列表的方法
   //   const getClassList = async () => {
   //     let result = await visualClass()
@@ -44,6 +48,23 @@ const VisualDisplay = props => {
     }
   }
 
+  //弹框出现与隐藏
+  const visibles = () => {
+    setFlag(true)
+  }
+
+  const visible = () => {
+    setvlag(true)
+  }
+
+  //子父传参事件
+  const displays = val => {
+    setFlag(val.flag)
+  }
+
+  const display = val => {
+    setvlag(val.flag)
+  }
   return (
     <div className="container">
       <header className="widget header">
@@ -85,25 +106,41 @@ const VisualDisplay = props => {
           <Eachart></Eachart>
           <div className="addExam">
             <div>
-              <button>添加成绩+:</button>
+              <button onClick={visibles}>添加成绩+:</button>
             </div>
             <div>
-              <button>添加分析和解决方案+</button>
+              <button onClick={visible}>添加分析和解决方案+</button>
             </div>
             <div>
-              <button>院长视角</button>
+              <button
+                onClick={() => {
+                  props.history.push('/leader')
+                }}>
+                院长视角
+              </button>
             </div>
             <div>
               <button>查看和编辑该学生所有成绩</button>
             </div>
           </div>
         </div>
-        <div className="tableTimer">
-          <div></div>
-        </div>
+        {flag ? (
+          <div className="tableTimer">
+            <Mask flag={flag} displays={displays}></Mask>
+          </div>
+        ) : (
+          ''
+        )}
+        {vlag ? (
+          <div className="tableTimers">
+            <Masks vlag={vlag} display={display}></Masks>
+          </div>
+        ) : (
+          ''
+        )}
       </main>
     </div>
   )
 }
 
-export default VisualDisplay
+export default connect()(VisualDisplay)
