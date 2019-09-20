@@ -85,6 +85,50 @@
     width: 150px;
     border: 1px solid #ccc;
   }
+  :global .tablelist {
+    width: 90%;
+    height: 60%;
+    margin: 0 5% 2% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .tablelist #main {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :global .tablelist .addExam {
+    flex: 1;
+    background: #ccc;
+    font-size: 7px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  :global .tablelist .addExam div {
+    width: 10%;
+    text-align: center;
+  }
+  :global .tablelist .addExam div:nth-child(1) {
+    margin: 0;
+  }
+  :global .tablelist .addExam div:last-child button {
+    width: 13%;
+    padding: 0.5%;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+  }
+  :global .tablelist .addExam div button {
+    width: 80%;
+    padding: 2%;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
 }
 
 @media screen and (min-width: 400px) and (max-width: 750px) {
@@ -174,20 +218,32 @@
     width: calc(1rem);
     border: 1px solid #ccc;
   }
+  :global .tablelist {
+    width: 90%;
+    height: 63%;
+    margin: 0 5%;
+  }
+  :global .tablelist #main {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  :global html {
+    font-size: calc(100 / 375 * 100vw);
+  }
   :global .container {
     width: 100%;
   }
   :global .widget,
   :global header {
     width: 100%;
-    height: calc(0.5rem);
+    height: calc(1rem);
     background-color: #0076ff;
     font-size: 14px;
     text-align: center;
-    line-height: calc(0.5rem);
+    line-height: calc(1rem);
     font-weight: normal;
     font-style: normal;
     opacity: 1;
@@ -257,6 +313,47 @@
   :global .addStudent div input {
     padding: 2.5%;
     width: calc(0.7rem);
+    border: 1px solid #ccc;
+  }
+  :global .tablelist {
+    width: 90%;
+    height: 60%;
+    margin: 0 5% 2% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .tablelist #main {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :global .tablelist .addExam {
+    flex: 1;
+    background: #ccc;
+    font-size: 7px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  :global .tablelist .addExam div {
+    text-align: center;
+    margin: 0 1% 0 0;
+  }
+  :global .tablelist .addExam div:nth-child(1) {
+    margin: 0 0 0 1%;
+  }
+  :global .tablelist .addExam div:last-child button {
+    width: 40%;
+    position: absolute;
+    right: 1%;
+    top: 25%;
+  }
+  :global .tablelist .addExam div button {
+    background: #fff;
     border: 1px solid #ccc;
   }
   :global .text {

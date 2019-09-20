@@ -1,10 +1,10 @@
 import React, { Component, useState } from 'react'
-import './index.css'
+import '../visualDisplay/index.css'
 import { Switch, message } from 'antd'
 import Eachart from '../../components/Echart'
 import { addStudent } from '../../services/visual'
 
-const VisualDisplay = props => {
+const Leader = props => {
   //定义state
   const [name, setName] = useState('')
   const [count, setCount] = useState('')
@@ -83,27 +83,10 @@ const VisualDisplay = props => {
         </div>
         <div className="tablelist">
           <Eachart></Eachart>
-          <div className="addExam">
-            <div>
-              <button>添加成绩+:</button>
-            </div>
-            <div>
-              <button>添加分析和解决方案+</button>
-            </div>
-            <div>
-              <button>院长视角</button>
-            </div>
-            <div>
-              <button>查看和编辑该学生所有成绩</button>
-            </div>
-          </div>
-        </div>
-        <div className="tableTimer">
-          <div></div>
         </div>
       </main>
     </div>
   )
 }
 
-export default VisualDisplay
+export default Leader

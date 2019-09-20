@@ -1,6 +1,7 @@
 import Login from '../view/login'
 import Registry from '../view/registry'
 import VisualDisplay from '../view/visualDisplay'
+import Leader from '../view/leader'
 
 export const routes = [
   {
@@ -14,6 +15,10 @@ export const routes = [
   {
     path: '/visual',
     component: VisualDisplay
+  },
+  {
+    path: '/leader',
+    component: Leader
   },
   {
     path: '/',
