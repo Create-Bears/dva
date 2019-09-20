@@ -1,7 +1,5 @@
-import React, { Component, useState } from 'react'
-// import {getToken} from '@/utils/cookie'
+import React, {  useState } from 'react'
 import { UserLogin, UserRegister } from '@/services/login'
-import { connect } from 'dva'
 import './index.css'
 
 const Login = props => {
@@ -39,6 +37,8 @@ const Login = props => {
         })
         if (result.data.code === 1) {
           alert(result.data.msg)
+          console.log(props)
+          props.history.push('/visual')
         } else {
           alert(result.data.msg)
         }
@@ -100,18 +100,7 @@ const Login = props => {
   </div>
   )
 }
-const mapState2Props = (store) => {
-  return {
-    
-  }
-}
-const mapDispatch2Props = (dispatch) => {
-  return {
-    // getUserLogin(params) {
-    //   dispatch({ type: 'login/login', payload: params })
-    // }
-  }
-}
 
-export default connect(mapState2Props, mapDispatch2Props)(Login)
+
+export default Login
 

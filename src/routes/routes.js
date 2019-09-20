@@ -1,6 +1,6 @@
 import Login from '../view/login'
-import Registry from '../view/registry'
 import VisualDisplay from '../view/visualDisplay'
+import AllList from '../view/allList'
 
 export const routes = [
   {
@@ -8,8 +8,8 @@ export const routes = [
     component: Login
   },
   {
-    path: '/registry',
-    component: Registry
+    path: '/allList',
+    component: AllList
   },
   {
     path: '/visual',
