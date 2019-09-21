@@ -120,7 +120,9 @@ const VisualDisplay = props => {
               </button>
             </div>
             <div>
-              <button>查看和编辑该学生所有成绩</button>
+              <button onClick={()=>{
+                props.history.push('/allList')
+              }}>查看和编辑该学生所有成绩</button>
             </div>
           </div>
         </div>
