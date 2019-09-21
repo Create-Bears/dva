@@ -74,16 +74,16 @@
   }
   :global .from-text .tab-list span {
     display: inline-block;
-    color: #95A0A7;
+    color: #95a0a7;
     font-weight: 400;
-    border-bottom: 2px solid #95A0A7;
+    border-bottom: 2px solid #95a0a7;
     padding: 10px 15px;
   }
   :global .from-text .tab-list .tab-list-active {
     display: inline-block;
-    color: #5A93D6;
+    color: #5a93d6;
     font-weight: 400;
-    border-bottom: 2px solid #5A93D6;
+    border-bottom: 2px solid #5a93d6;
     padding: 10px 15px;
   }
 }
@@ -174,16 +174,16 @@
   }
   :global .from-text .tab-list span {
     display: inline-block;
-    color: #95A0A7;
+    color: #95a0a7;
     font-weight: 400;
-    border-bottom: 2px solid #95A0A7;
+    border-bottom: 2px solid #95a0a7;
     padding: 0.1rem 0.15rem;
   }
   :global .from-text .tab-list .tab-list-active {
     display: inline-block;
-    color: #5A93D6;
+    color: #5a93d6;
     font-weight: 400;
-    border-bottom: 2px solid #5A93D6;
+    border-bottom: 2px solid #5a93d6;
     padding: 0.1rem 0.15rem;
   }
 }

@@ -1,6 +1,7 @@
 @media screen and (min-width: 750px) {
   :global .container {
     width: 100%;
+    position: relative;
   }
   :global .widget,
   :global .header {
@@ -84,6 +85,200 @@
     padding: 5%;
     width: 150px;
     border: 1px solid #ccc;
+  }
+  :global .tablelist {
+    width: 90%;
+    height: 60%;
+    margin: 0 5% 2% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .tablelist #main {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :global .tablelist .addExam {
+    flex: 1;
+    background: #ccc;
+    font-size: 7px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  :global .tablelist .addExam div {
+    width: 10%;
+    text-align: center;
+  }
+  :global .tablelist .addExam div:nth-child(1) {
+    margin: 0;
+  }
+  :global .tablelist .addExam div:last-child button {
+    width: 13%;
+    padding: 0.5%;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+  }
+  :global .tablelist .addExam div button {
+    width: 80%;
+    padding: 2%;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+  }
+  :global .tableTimer .smallMask {
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    background: #fff;
+    padding: 1%;
+  }
+  :global .tableTimer .smallMask h3 {
+    margin: 3% 0;
+    font-weight: normal;
+  }
+  :global .tableTimer .smallMask div {
+    margin: 5%;
+  }
+  :global .tableTimer .smallMask div button {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 5%;
+  }
+  :global .tableTimer .smallMask div .yesterday {
+    position: absolute;
+    top: 16%;
+    right: 10%;
+    background: skyblue;
+    color: #00f;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimer .smallMask div .cancel {
+    position: absolute;
+    bottom: 8%;
+    right: 100px;
+    background: #fff;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimer .smallMask div .comfirm {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+    background: #00f;
+    color: #fff;
+    border: none;
+  }
+  :global .tableTimer .smallMask div input {
+    width: 250px;
+    padding: 2%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 2%;
+    border-radius: 5px;
+  }
+  :global .tableTimers {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+  }
+  :global .tableTimers .smallMasks {
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    background: #fff;
+    padding: 1%;
+  }
+  :global .tableTimers .smallMasks h3 {
+    margin: 3% 0;
+    font-weight: normal;
+  }
+  :global .tableTimers .smallMasks div {
+    margin: 5%;
+  }
+  :global .tableTimers .smallMasks div button {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 5%;
+  }
+  :global .tableTimers .smallMasks div .yesterday {
+    position: absolute;
+    top: 16%;
+    right: 10%;
+    background: skyblue;
+    color: #00f;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimers .smallMasks div .cancel {
+    position: absolute;
+    bottom: 8%;
+    right: 100px;
+    background: #fff;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimers .smallMasks div .comfirm {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+    background: #00f;
+    color: #fff;
+    border: none;
+  }
+  :global .tableTimers .smallMasks div input {
+    width: 250px;
+    padding: 2%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 2%;
+    border-radius: 5px;
+  }
+  :global .tableTimers .smallMasks div textarea {
+    width: 250px;
+    padding: 1%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 25%;
+    border-radius: 5px;
+  }
+  :global .tableTimers .smallMasks div .fxExam {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+  }
+  :global .tableTimers .smallMasks div .jExam {
+    position: absolute;
+    top: 65%;
+    left: 7%;
   }
 }
 
@@ -174,20 +369,32 @@
     width: calc(1rem);
     border: 1px solid #ccc;
   }
+  :global .tablelist {
+    width: 90%;
+    height: 63%;
+    margin: 0 5%;
+  }
+  :global .tablelist #main {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  :global html {
+    font-size: calc(100 / 375 * 100vw);
+  }
   :global .container {
     width: 100%;
   }
   :global .widget,
   :global header {
     width: 100%;
-    height: calc(0.5rem);
+    height: calc(1rem);
     background-color: #0076ff;
     font-size: 14px;
     text-align: center;
-    line-height: calc(0.5rem);
+    line-height: calc(1rem);
     font-weight: normal;
     font-style: normal;
     opacity: 1;
@@ -257,6 +464,47 @@
   :global .addStudent div input {
     padding: 2.5%;
     width: calc(0.7rem);
+    border: 1px solid #ccc;
+  }
+  :global .tablelist {
+    width: 90%;
+    height: 60%;
+    margin: 0 5% 2% 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .tablelist #main {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  :global .tablelist .addExam {
+    flex: 1;
+    background: #ccc;
+    font-size: 7px;
+    font-weight: normal;
+    font-style: normal;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  :global .tablelist .addExam div {
+    text-align: center;
+    margin: 0 1% 0 0;
+  }
+  :global .tablelist .addExam div:nth-child(1) {
+    margin: 0 0 0 1%;
+  }
+  :global .tablelist .addExam div:last-child button {
+    width: 40%;
+    position: absolute;
+    right: 1%;
+    top: 25%;
+  }
+  :global .tablelist .addExam div button {
+    background: #fff;
     border: 1px solid #ccc;
   }
   :global .text {
