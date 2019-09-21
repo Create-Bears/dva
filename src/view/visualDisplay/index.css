@@ -386,6 +386,7 @@
   }
   :global .container {
     width: 100%;
+    position: relative;
   }
   :global .widget,
   :global header {
@@ -506,6 +507,156 @@
   :global .tablelist .addExam div button {
     background: #fff;
     border: 1px solid #ccc;
+  }
+  :global .tableTimer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+  }
+  :global .tableTimer .smallMask {
+    width: calc(3.4rem);
+    height: calc(3rem);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: calc(-1.7rem);
+    margin-top: calc(-1.5rem);
+    background: #fff;
+    padding: 1%;
+  }
+  :global .tableTimer .smallMask h3 {
+    margin: 3% 0 3% 2%;
+    font-weight: normal;
+  }
+  :global .tableTimer .smallMask div {
+    margin: 5%;
+  }
+  :global .tableTimer .smallMask div button {
+    width: calc(0.8rem);
+    height: calc(0.3rem);
+    line-height: calc(0.3rem);
+    text-align: center;
+    margin: 5%;
+  }
+  :global .tableTimer .smallMask div .yesterday {
+    position: absolute;
+    top: 16%;
+    right: 0%;
+    background: skyblue;
+    color: #00f;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimer .smallMask div .cancel {
+    position: absolute;
+    bottom: 8%;
+    right: calc(1rem);
+    background: #fff;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimer .smallMask div .comfirm {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+    background: #00f;
+    color: #fff;
+    border: none;
+  }
+  :global .tableTimer .smallMask div input {
+    width: calc(2rem);
+    padding: 2%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 2%;
+    border-radius: 5px;
+  }
+  :global .tableTimers {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+  }
+  :global .tableTimers .smallMasks {
+    width: calc(3.4rem);
+    height: calc(3rem);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: calc(-1.7rem);
+    margin-top: calc(-1.5rem);
+    background: #fff;
+    padding: 1%;
+  }
+  :global .tableTimers .smallMasks h3 {
+    margin: 3% 0 3% 2%;
+    font-weight: normal;
+  }
+  :global .tableTimers .smallMasks div {
+    margin: 5%;
+  }
+  :global .tableTimers .smallMasks div button {
+    width: calc(0.8rem);
+    height: calc(0.3rem);
+    line-height: calc(0.3rem);
+    text-align: center;
+    margin: 5%;
+  }
+  :global .tableTimers .smallMasks div .yesterday {
+    position: absolute;
+    top: 16%;
+    right: 0%;
+    background: skyblue;
+    color: #00f;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimers .smallMasks div .cancel {
+    position: absolute;
+    bottom: 0%;
+    right: calc(1rem);
+    background: #fff;
+    border: none;
+    border: 1px solid #ccc;
+  }
+  :global .tableTimers .smallMasks div .comfirm {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    background: #00f;
+    color: #fff;
+    border: none;
+  }
+  :global .tableTimers .smallMasks div input {
+    width: calc(2rem);
+    padding: 2%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 2%;
+    border-radius: 5px;
+  }
+  :global .tableTimers .smallMasks div textarea {
+    width: calc(2rem);
+    padding: 1%;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 0 0 0 25%;
+    border-radius: 5px;
+  }
+  :global .tableTimers .smallMasks div .fxExam {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+  }
+  :global .tableTimers .smallMasks div .jExam {
+    position: absolute;
+    top: 65%;
+    left: 7%;
   }
   :global .text {
     width: 100%;
