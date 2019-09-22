@@ -2,6 +2,7 @@ import React from 'react'
 
 const ChangeDialog = props=>{
   let {changeShow,handHide}=props;
+  console.log(props)
   return (
     <div style={{display:changeShow?'block':'none'}} className="dialog">
     <div className="mask-change">

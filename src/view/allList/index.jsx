@@ -2,44 +2,80 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'dva'
 import ChangeDialog from '@/components/ChangeDialog'
 import DeleteDialog from '@/components/deleteDialog'
+import Table from '@/components/Table'
 import './index.css'
 
 const AllList = props => {
   console.log(props)
-  let [thList, setThList] = useState(['序号', '日期', '理论', '技能', '分析和解决', '是否周考', '操作'])
-  let [tbList,setTbList]=useState([])
+  let [thList, setThList] = useState([
+    {
+      title: '序号',
+      dataIndex: 'num'
+    },
+    {
+      title: '日期',
+      dataIndex: 'time'
+    },
+    {
+      title: '理论',
+      dataIndex: 'theory'
+    },
+    {
+      title: '技能',
+      dataIndex: 'skill'
+    },
+    {
+      title: '分析和解决',
+      dataIndex: 'desc'
+    },
+    {
+      title: '是否周考',
+      dataIndex: 'flag'
+    },
+    {
+      title: '操作',
+      render: (text) => (
+        <span>
+          <a onClick={()=>{setChangeShow(true)}}>编辑</a>
+          <a onClick={()=>{setDeleteShow(true)}}>删除</a>
+        </span>
+      )
+    }])
+
+  // let [thList, setThList] = useState(['序号', '日期', '理论', '技能', '分析和解决', '是否周考', '操作'])
+  let [tbList, setTbList] = useState([])
   //删除的数据的num值
-  let [deleteNum,setDeleteNum]=useState()
+  let [deleteNum, setDeleteNum] = useState()
   //删除弹框的显示
-  let [deleteShow,setDeleteShow]=useState(false)
+  let [deleteShow, setDeleteShow] = useState(false)
   //编辑弹框的显示
-  let [changeShow,setChangeShow]=useState(false)
+  let [changeShow, setChangeShow] = useState(false)
   //编辑的数据的num值
-  let [changeNum,setChangeNum]=useState()
+  let [changeNum, setChangeNum] = useState()
 
   useEffect(() => {
     setTbList(props.tableList)
   }, []);
 
-  let handClick =(type,num)=>{
-    if(type==='delete'){
+  let handClick = (type, num) => {
+    if (type === 'delete') {
       setDeleteShow(true)
       setDeleteNum(num)
-    }else{
+    } else {
       setChangeShow(true)
       setChangeNum(num)
     }
   }
 
-  let handDelete=()=>{
+  let handDelete = () => {
     props.deleteTabList(deleteNum)
     setDeleteShow(false)
   }
   //设置回调函数用来控制弹出框的显示隐藏
-  let handHide =(flag)=>{
+  let handHide = (flag) => {
     setChangeShow(flag)
   }
-  let handDeleteHide =(flag)=>{
+  let handDeleteHide = (flag) => {
     setDeleteShow(flag)
   }
   return (
@@ -64,34 +100,7 @@ const AllList = props => {
             </div>
           </div>
           <div className="con-bottom">
-            <table>
-              <thead>
-                <tr>
-                  {thList.map((item, index) => {
-                    return <th key={index}>{item}</th>
-                  })}
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  tbList.map((item,index)=>{
-                    return <tr key={index}>
-                      <td>{item.num}</td>
-                      <td>{item.time}</td>
-                      <td>{item.theory}</td>
-                      <td>{item.skill}</td>
-                      <td className="td-desc">{item.desc}</td>
-                      <td>{item.flag}</td>
-                      <td>
-                        {item.btns.map((key,i)=>{
-                          return <span key={i} onClick={()=>handClick(key.type,item.num)}>{key.title}</span>
-                        })}
-                      </td>
-                    </tr>
-                  })
-                }
-              </tbody>
-            </table>
+            <Table colums={thList} data={tbList} />
           </div>
         </div>
       </main>
@@ -107,12 +116,12 @@ const map2StateProps = (store) => {
   }
 }
 
-const map2DiapatchProps=(dispatch)=>{
+const map2DiapatchProps = (dispatch) => {
   return {
-    deleteTabList(num){
-      dispatch({type:'allList/deleteList',num})
+    deleteTabList(num) {
+      dispatch({ type: 'allList/deleteList', num })
     }
   }
 }
 
-export default connect(map2StateProps,map2DiapatchProps)(AllList)
+export default connect(map2StateProps, map2DiapatchProps)(AllList)

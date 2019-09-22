@@ -9,14 +9,7 @@ export default {
         theory:"90",
         skill:'Success',
         desc:'对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和',
-        flag:'是',
-        btns:[{
-          type:'change',
-          title:'编辑'
-        },{
-          type:'delete',
-          title:'删除'
-        }]
+        flag:'是'
       },
       {
         num:2,
@@ -24,14 +17,7 @@ export default {
         theory:"90",
         skill:'Success',
         desc:'对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和',
-        flag:'是',
-        btns:[{
-          type:'change',
-          title:'编辑'
-        },{
-          type:'delete',
-          title:'删除'
-        }]
+        flag:'是'
       },
       {
         num:3,
@@ -39,14 +25,7 @@ export default {
         theory:"90",
         skill:'Success',
         desc:'对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和',
-        flag:'是',
-        btns:[{
-          type:'change',
-          title:'编辑'
-        },{
-          type:'delete',
-          title:'删除'
-        }]
+        flag:'是'
       },
       {
         num:4,
@@ -54,14 +33,7 @@ export default {
         theory:"90",
         skill:'Success',
         desc:'对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和',
-        flag:'是',
-        btns:[{
-          type:'change',
-          title:'编辑'
-        },{
-          type:'delete',
-          title:'删除'
-        }]
+        flag:'是'
       },
       {
         num:5,
@@ -69,14 +41,7 @@ export default {
         theory:"90",
         skill:'Success',
         desc:'对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和',
-        flag:'是',
-        btns:[{
-          type:'change',
-          title:'编辑'
-        },{
-          type:'delete',
-          title:'删除'
-        }]
+        flag:'是'
       }
     ]
   },
